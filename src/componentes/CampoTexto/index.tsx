@@ -6,6 +6,7 @@ interface CampoTexoProps {
   valor: string;
   placeholder: string;
   obrigatorio?: boolean;
+  tipo?: "text" | "password" | "date" | "email" | "number";
 }
 
 const CampoTexto = ({
@@ -14,6 +15,7 @@ const CampoTexto = ({
   placeholder,
   obrigatorio = false,
   label,
+  tipo = "text",
 }: CampoTexoProps) => {
   const aoDigitado = (evento: React.ChangeEvent<HTMLInputElement>) => {
     aoAlterado(evento.target.value);
@@ -27,6 +29,7 @@ const CampoTexto = ({
         value={valor}
         placeholder={placeholder}
         required={obrigatorio}
+        type={tipo}
       />
     </div>
   );
