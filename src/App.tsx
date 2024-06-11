@@ -1,9 +1,10 @@
 // import './App.css';
 import { useState } from "react";
-import { Formulario } from "./componentes/Formulario";
-import { Time } from "./componentes/Time";
-import Banner from "./componentes/Banner";
 import { Rodape } from "./componentes/Rodape";
+import { IColaborador } from "./compartilahdo/IColaboradores/IColaborador";
+import Formulario from "./componentes/Formulario";
+import Time from "./componentes/Time";
+import Banner from "./componentes/Banner";
 
 function App() {
   const times = [
@@ -44,10 +45,9 @@ function App() {
     },
   ];
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    debugger;
+  const aoNovoColaboradorAdicionado = (colaborador: IColaborador) => {
     setColaboradores([...colaboradores, colaborador]);
   };
 

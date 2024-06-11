@@ -1,13 +1,22 @@
 import React from "react";
 import "./ListaSuspensa.css";
-export const ListaSuspensa = (props) => {
+
+interface ListaSuspensaProps {
+  aoAlterado: (valor: string) => void;
+  label: string;
+  valor: string;
+  obrigatorio: boolean;
+  itens: string[];
+}
+
+const ListaSuspensa = (props: ListaSuspensaProps) => {
   return (
     <div className="lista-suspensa">
       <label>{props.label}</label>
       <select
         onChange={(evento) => props.aoAlterado(evento.target.value)}
         value={props.valor}
-        required={props.required}
+        required={props.obrigatorio}
       >
         <option value=""></option>
         {props.itens.map((item) => (
@@ -17,3 +26,5 @@ export const ListaSuspensa = (props) => {
     </div>
   );
 };
+
+export default ListaSuspensa;

@@ -5,14 +5,14 @@ interface CampoTexoProps {
   label: string;
   valor: string;
   placeholder: string;
-  obrigatorio: boolean;
+  obrigatorio?: boolean;
 }
 
 const CampoTexto = ({
   aoAlterado,
   valor,
   placeholder,
-  obrigatorio,
+  obrigatorio = false,
   label,
 }: CampoTexoProps) => {
   const aoDigitado = (evento: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,5 +1,5 @@
 import { IColaborador } from "../../compartilahdo/IColaboradores/IColaborador";
-import  Colaborador  from "../Colaborador";
+import Colaborador from "../Colaborador";
 import "./Time.css";
 
 interface TimeProps {
@@ -9,7 +9,7 @@ interface TimeProps {
   colaboradores: IColaborador[];
 }
 
-export const Time = (props: TimeProps) => {
+const Time = (props: TimeProps) => {
   const cssCorPrimaria = { borderColor: props.corPrimaria };
   const cssCorSecundaria = { backgroundColor: props.corSecundaria };
   return (
@@ -31,3 +31,5 @@ export const Time = (props: TimeProps) => {
     )
   );
 };
+
+export default Time;
